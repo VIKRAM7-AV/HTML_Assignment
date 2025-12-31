@@ -1,50 +1,6 @@
-Objective:
-Your task is to convert a Figma design into a fully responsive, pixel-perfect webpage using HTML, CSS, and JavaScript. The goal is to assess your front-end development skills, attention to detail, and ability to create clean, maintainable code.
+#Figma to HTML – Pixel Perfect Responsive Webpage
 
-Project Details:
-Figma Design Link: https://www.figma.com/design/1AL9FkPV5ZoD0lC2TKSLQH/HTML-Developer-Assignment-New?node-id=21001-8&t=yQXbeqawxTtTBchu-0 
-Expected Output: A pixel-perfect and responsive webpage that matches the design.
-Technologies Required: HTML, CSS, JavaScript (No frameworks like React/Vue are allowed).
-All the Images should be directly exported from the Figma File.
-
-Requirements:
-Pixel Perfect Implementation: Ensure that the final output matches the Figma design exactly.
-Responsiveness: The page should be fully responsive across different screen sizes (desktop, tablet, and mobile).
-Clean Code: Write well-structured, readable, and maintainable code.
-Cross-Browser Compatibility: The page should work seamlessly on Chrome, Firefox, Edge, and Safari.
-Performance Optimization: Minimize unnecessary CSS, JavaScript, and optimize images where required.
-Functional Elements: Implement any interactive elements like buttons, hover effects, and animations as per the design.
-
-
-UI Related Requirements:
-The header should be broken into a hamburger menu for tablet and mobile view.
-On the product section (where it says GTG Perfumes) the gallery on the left should be functional. Clicking on the arrows or dots should change the image. Also clicking on the thumbnails should change the image also. 
-And on the right column, the radio buttons should also be functional. Please write a JS function so that the add to cart link changes based on what the user has selected in the radio options. 
-There are two radio groups. Fragrances and Purchase type. Both have 3 options each. So, based on this, the add to cart can have 9 different variations. Use any dummy link. But it should change based on the selection.
-Single Subscription and Double Subscription should be expandable based on the selected radio option ( The design for each is given ) 
-On the percentage section ( where it has those 84%, 78% things ), the numbers should count up from 0 when the user reaches the section.
-The table should be a HTML table.
-
-Submission Guidelines:
-Delivery Format: Submit a zip file containing your project folder with the following structure:
-/project-folder
-   /assets  (if applicable)
-   /css  (contains your stylesheets)
-   /js  (contains your scripts)
-index.html
-Hosting (Optional but Preferred): Deploy the page using GitHub Pages, Vercel, or Netlify and share the live link.
-Evaluation Criteria:
-Accuracy in design implementation
-Code quality and structure
-Responsiveness and cross-browser compatibility
-Performance optimization
-
-Bonus Points:
-Use CSS animations where applicable for a smoother UI experience.
-Implement lazy loading for images.
-
-How to Submit:
-Upload your zip file to Google Drive/GitHub and share the link.
-If deployed, share the live link along with the source code.
-Submission date: 4 days from receiving the assignment
+Pixel-perfect and fully responsive webpage built from a Figma design using HTML, CSS, and JavaScript.
+Includes responsive hamburger menu, interactive product gallery, dynamic add-to-cart links based on radio selections, expandable subscription sections, animated counters, and cross-browser support.
+No frameworks used.
 
