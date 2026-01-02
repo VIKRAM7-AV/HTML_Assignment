@@ -54,3 +54,23 @@ export const popularDescription = [
   "Pause or Cancel Anytime after 3 months minimum",
   "28 Day Money Back Guarantee*",
 ];
+
+
+export const collectionDetails = [
+  {
+    title: "Signature Scents",
+    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
+  },
+  {
+    title: "Signature Scents",
+    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
+  },
+  {
+    title: "Signature Scents",
+    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
+  },
+  {
+    title: "Signature Scents",
+    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
+  }
+];
