@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#032E15">
+    <meta name="description" content="GTG Perfumes">
     <title>GTG Perfumes</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/script.js"></script>
@@ -12,15 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-
 </head>
 
 <body>
     <header class="header">
         <div class="nav_container">
             <a class="logo" href="#">GTG</a>
-            <nav class="nav">
+            <div class="mobile_icons">
+                <a href="#" class="cart-icon mobile-search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="nav" id="navMenu">
                 <ul class="nav-list">
                     <li><a href="#">Home</a></li>
                     <li class="dropdown">
@@ -36,7 +43,7 @@
                 </ul>
             </nav>
             <div class="nav_actions">
-                <a href="#" class="cart-icon"><i class="fa-solid fa-magnifying-glass"></i>
+                <a href="#" class="cart-icon desktop-search"><i class="fa-solid fa-magnifying-glass"></i>
                 </a>
                 <button class="button">Shop Now</button>
             </div>

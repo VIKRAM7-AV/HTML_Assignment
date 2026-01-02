@@ -5,8 +5,53 @@ import {
   popularDescription,
   collectionDetails,
   percentageDetails,
-  tableData
+  tableData,
 } from "./dummy_data.js";
+
+
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const navMenu = document.getElementById("navMenu");
+const hamburgerIcon = hamburgerBtn ? hamburgerBtn.querySelector("i") : null;
+
+if (hamburgerBtn && navMenu && hamburgerIcon) {
+  hamburgerBtn.addEventListener("click", () => {
+    const isActive = navMenu.classList.toggle("active");
+    hamburgerBtn.classList.toggle("active");
+    document.body.style.overflow = isActive ? "hidden" : "";
+
+
+    if (isActive) {
+      hamburgerIcon.classList.remove("fa-bars");
+      hamburgerIcon.classList.add("fa-xmark");
+    } else {
+      hamburgerIcon.classList.remove("fa-xmark");
+      hamburgerIcon.classList.add("fa-bars");
+    }
+  });
+
+
+  navMenu.addEventListener("click", (e) => {
+    if (e.target === navMenu) {
+      hamburgerBtn.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.style.overflow = "";
+      hamburgerIcon.classList.remove("fa-xmark");
+      hamburgerIcon.classList.add("fa-bars");
+    }
+  });
+
+
+  const navLinks = navMenu.querySelectorAll(".nav-list a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburgerBtn.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.style.overflow = "";
+      hamburgerIcon.classList.remove("fa-xmark");
+      hamburgerIcon.classList.add("fa-bars");
+    });
+  });
+}
 
 const container = document.getElementById("company_details");
 
@@ -23,7 +68,6 @@ container.innerHTML = companyDetails
   )
   .join("");
 
-// ------------------ Perfume Images Section ------------------
 
 const Perfume_Images = perfume_Imgs.img;
 let currentIndex = 0;
@@ -91,7 +135,6 @@ initGallery();
 const rating = 4.7;
 document.getElementById("fill").style.width = (rating / 5) * 100 + "%";
 
-// --------------Fragrance Section------------------
 
 const fragranceContainers = document.querySelectorAll(".fragrance_List");
 
@@ -134,7 +177,7 @@ whatsIncludedContainers.forEach((whatsIncludedContainer) => {
     .join("");
 });
 
-// description section
+
 
 const highlightText = (text) => {
   return text
@@ -168,7 +211,6 @@ descriptionContainers.forEach((descriptionContainer) => {
     .join("");
 });
 
-//Colection Section
 
 const collectionContainer = document.getElementById("collection_list");
 
@@ -212,20 +254,24 @@ if (collectionRadios.length) {
 }
 
 
-// Percentage Section
-
 const percentageContainer = document.getElementById("percentage_item");
 
-percentageContainer.innerHTML = percentageDetails.map(
-  (item)=>`
+percentageContainer.innerHTML = percentageDetails
+  .map(
+    (item) => `
     <div class="percentage_detail">
-      <h2 class="percentage_value" data-target="${parseInt(item.percentage,10)}">0%</h2>
+      <h2 class="percentage_value" data-target="${parseInt(
+        item.percentage,
+        10
+      )}">0%</h2>
       <p class="percentage_description">${item.description}</p>
     </div>
   `
-).join("");
+  )
+  .join("");
 
-const percentageValues = percentageContainer.querySelectorAll('.percentage_value');
+const percentageValues =
+  percentageContainer.querySelectorAll(".percentage_value");
 
 function animateValue(el, duration = 1500) {
   const target = parseInt(el.dataset.target, 10) || 0;
@@ -234,34 +280,35 @@ function animateValue(el, duration = 1500) {
     if (!start) start = timestamp;
     const progress = Math.min((timestamp - start) / duration, 1);
     const current = Math.floor(progress * target);
-    el.textContent = current + '%';
+    el.textContent = current + "%";
     if (progress < 1) {
       requestAnimationFrame(step);
     } else {
-      el.textContent = target + '%';
+      el.textContent = target + "%";
     }
   }
   requestAnimationFrame(step);
 }
 
 if (percentageValues.length) {
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        percentageValues.forEach((el) => {
-          if (!el.dataset.animated) {
-            animateValue(el);
-            el.dataset.animated = 'true';
-          }
-        });
-        obs.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          percentageValues.forEach((el) => {
+            if (!el.dataset.animated) {
+              animateValue(el);
+              el.dataset.animated = "true";
+            }
+          });
+          obs.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
   observer.observe(percentageContainer);
 }
-
-
 
 const tableBody = document.getElementById("tableBody");
 
@@ -271,7 +318,10 @@ tableBody.innerHTML = tableData
       .map((cell, idx) => {
         if (idx === 0) return `<td>${cell}</td>`;
         if (/^t$/i.test(String(cell))) {
-          const cls = idx === 1 ? 'fa-solid fa-circle-check icon-yes table-icon' : 'fa-regular fa-circle-check icon-yes table-icon';
+          const cls =
+            idx === 1
+              ? "fa-solid fa-circle-check icon-yes table-icon"
+              : "fa-regular fa-circle-check icon-yes table-icon";
           return `<td><i class="${cls}" aria-hidden="true"></i></td>`;
         }
 
