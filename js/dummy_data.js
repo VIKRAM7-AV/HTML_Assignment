@@ -55,22 +55,55 @@ export const popularDescription = [
   "28 Day Money Back Guarantee*",
 ];
 
-
 export const collectionDetails = [
   {
     title: "Signature Scents",
-    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
+    description:
+      "Discover our curated line of signature perfumes, designed to become your daily companion.",
   },
   {
     title: "Signature Scents",
-    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
+    description:
+      "Discover our curated line of signature perfumes, designed to become your daily companion.",
   },
   {
     title: "Signature Scents",
-    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
+    description:
+      "Discover our curated line of signature perfumes, designed to become your daily companion.",
   },
   {
     title: "Signature Scents",
-    description:"Discover our curated line of signature perfumes, designed to become your daily companion."
-  }
+    description:
+      "Discover our curated line of signature perfumes, designed to become your daily companion.",
+  },
+];
+
+export const percentageDetails = [
+  {
+    percentage: "84%",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+  {
+    percentage: "78%",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+  {
+    percentage: "89%",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+  {
+    percentage: "90%",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+];
+
+export const tableData = [
+  ["Potency Concentration", "10x", "1x", "1x", "10x"],
+  ["Longevity", "t", "f", "f", "t"],
+  ["Sillage", "t", "f", "f", "f"],
+  ["Bottle Design Score", "9", "5", "6", "2"],
+  ["Blend and Harmony", "t", "f", "f", "f"],
+  ["Skin Compatibility", "t", "f", "f", "f"],
+  ["Scent Profile", "t", "t", "f", "f"],
+  ["Price vs. Quality", "t", "t", "f", "t"],
 ];

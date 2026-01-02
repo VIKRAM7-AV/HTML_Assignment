@@ -725,3 +725,207 @@ body {
     cursor: pointer;
     margin-top: 8px;
 }
+
+.percentage_Container {
+    width: 100%;
+    height: 201px;
+    background: linear-gradient(180deg, #032E15 0%, #016630 100%);
+    margin-top: 15px;
+    margin-bottom: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.percentage_content {
+    display: inline-flex;
+    width: 1119px;
+    height: 86px;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.percentage_detail {
+    width: 215px;
+}
+
+.percentage_value {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.percentage_description {
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.GTG_choice {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 862px;
+    gap: 46px;
+}
+
+.line_text {
+    font-weight: 300;
+    font-size: 40px;
+    align-items: center;
+    text-align: center;
+    color: #032E15;
+}
+
+.GTG_title {
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    color: #032E15;
+}
+
+.table_img {
+    width: 88px;
+    height: 88px;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+}
+
+.hover-table {
+    border-collapse: collapse;
+    width: auto;
+    text-align: left;
+    max-width: 100%;
+}
+
+.hover-table th {
+    padding: 38px 54px;
+    position: relative;
+}
+
+.hover-table th:first-child {
+    padding: 20px 24px;
+    position: relative;
+}
+
+.hover-table th,
+.hover-table td {
+    border-bottom: 1px solid #666666;
+}
+
+.hover-table td {
+    padding: 20px 24px;
+}
+
+.hover-table th:not(.table_padding) p {
+    margin-top: 12px;
+}
+
+.choice_grid {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.gtg_text {
+    font-weight: 300;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.gtg_small_text {
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+    color: #666666;
+}
+
+.GTG_column_title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #322D2D;
+    padding-left: -24px;
+    text-align: left;
+}
+
+.hover-table td:first-child {
+    font-weight: 700;
+    width: 300px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #666666;
+}
+
+.hover-table th:nth-child(2),
+.hover-table td:nth-child(2) {
+    background-color: #e6f0ff;
+    border-bottom: 1px dashed #666666;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+    color: #666666;
+}
+
+.hover-table td:nth-child(3),
+.hover-table td:nth-child(4),
+.hover-table td:nth-child(5) {
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+    color: #666666;
+}
+
+/* Icon styling for table checks/x marks */
+.table-icon {
+    font-size: 27px;
+    display: block;
+    margin: 0 auto;
+}
+
+.icon-yes {
+    color: #032E15;
+}
+
+.icon-no {
+    color: #322D2D;
+}
+
+.hover-table th:nth-child(2) {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.hover-table tbody tr:last-child td:nth-child(2) {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.explore_button {
+    width: 194px;
+    height: 56px;
+    border-radius: 505.64px;
+    border-bottom-width: 1.01px;
+    padding:12px 24px;
+    background: linear-gradient(180deg, #032E15 0%, #016630 100%);
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 120px;
+}
+
+.explore_button_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 47px;
+}

@@ -4,6 +4,8 @@ import {
   fragranceDetails,
   popularDescription,
   collectionDetails,
+  percentageDetails,
+  tableData
 } from "./dummy_data.js";
 
 const container = document.getElementById("company_details");
@@ -208,3 +210,78 @@ if (collectionRadios.length) {
   collectionRadios[0].checked = true;
   updateActiveCollection();
 }
+
+
+// Percentage Section
+
+const percentageContainer = document.getElementById("percentage_item");
+
+percentageContainer.innerHTML = percentageDetails.map(
+  (item)=>`
+    <div class="percentage_detail">
+      <h2 class="percentage_value" data-target="${parseInt(item.percentage,10)}">0%</h2>
+      <p class="percentage_description">${item.description}</p>
+    </div>
+  `
+).join("");
+
+const percentageValues = percentageContainer.querySelectorAll('.percentage_value');
+
+function animateValue(el, duration = 1500) {
+  const target = parseInt(el.dataset.target, 10) || 0;
+  let start = null;
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const current = Math.floor(progress * target);
+    el.textContent = current + '%';
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = target + '%';
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+if (percentageValues.length) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        percentageValues.forEach((el) => {
+          if (!el.dataset.animated) {
+            animateValue(el);
+            el.dataset.animated = 'true';
+          }
+        });
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(percentageContainer);
+}
+
+
+
+const tableBody = document.getElementById("tableBody");
+
+tableBody.innerHTML = tableData
+  .map((row) => {
+    const cells = row
+      .map((cell, idx) => {
+        if (idx === 0) return `<td>${cell}</td>`;
+        if (/^t$/i.test(String(cell))) {
+          const cls = idx === 1 ? 'fa-solid fa-circle-check icon-yes table-icon' : 'fa-regular fa-circle-check icon-yes table-icon';
+          return `<td><i class="${cls}" aria-hidden="true"></i></td>`;
+        }
+
+        if (/^f$/i.test(String(cell))) {
+          return `<td><i class="fa-regular fa-circle-xmark icon-no table-icon" aria-hidden="true"></i></td>`;
+        }
+        return `<td>${cell}</td>`;
+      })
+      .join("");
+
+    return `<tr>${cells}</tr>`;
+  })
+  .join("");
